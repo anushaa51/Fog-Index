@@ -51,11 +51,15 @@ def syllables(word):
                         syllableCount += 1  # vowel combination forming 2 syllable
 
                     LastLetter = alphabet
-                else :  # two vowels vowel as well as non vowel combination
+                else :  # two vowels (one syllable) as well as non vowel combination
                     if CurrentCombo in OneSyllable:
-                        if CurrentCombo + word[index+1] == word[- 3:] :  # ier conributes to 2 syllables
+                        try:
+                            if CurrentCombo + word[index+1] == word[- 3:] :  # ier conributes to 2 syllables
 
-                            syllableCount+=1
+                                syllableCount += 1
+                        except IndexError :
+                            syllableCount += 0
+
                         LastLetter = alphabet
 
 
@@ -79,8 +83,7 @@ def syllables(word):
     if word[-2:]  ==  "sm" : syllableCount+=1
 
 
-    if syllableCount == 0:
-        syllableCount += 1
+
     print("Number of syllables in ",saved," is ",syllableCount)
 
 
