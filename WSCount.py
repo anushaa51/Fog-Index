@@ -1,5 +1,6 @@
 import re
 from SyllableCounter import syllables
+from CompoundWord import split
 FileObject = open("TestDocument", "r")
 file_contents = FileObject.read()
 
@@ -14,7 +15,7 @@ def counting():
     for word in words:
         if word not in capital_words and len(word) >= 3: #all lower case words
 
-            if syllables(word) >= 3:
+            if syllables(word) >= 3 and len(split(word)) == 1:
                 syllablecount += 1
 
         if word in capital_words and word in beg_each_Sentence: #beginning of each sentence is uppercase
