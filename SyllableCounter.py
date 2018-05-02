@@ -2,10 +2,10 @@
 
 def syllables(word):
     word = word.lower()
-    saved = word;
-    word = word +" "  # word extended
+    saved = word
+    word = word + " "  # word extended
     length = len(word);
-    ending = ["ing " ,"ed " ,"es " ,"ous " ,"tion" ,"nce" ,"ness"]  # not included in complex words
+    ending = ["ing " ,"ed " ,"es " ,"ous " ,"tion " ,"nce " ,"ness ","ly "]  # not included in complex words
 
     for end in ending:
         x = word.find(end)
@@ -20,14 +20,15 @@ def syllables(word):
     if word[-1] == "e":
         if word[-3:] == ("nce" or "rce"):
             syllableCount = 0
-        elif word[-3] and word[-2] not in vowels and word[-3:] != ("nce" or "rce"):
-            syllableCount+=1  # e cannot be dropped as it contributes to a syllable
+        elif word[-3] not in vowels and word[-2] not in vowels and word[-3:] != ("nce" or "rce") :
+            if word[-3] != "'":
+
+                syllableCount += 1  # e cannot be dropped as it contributes to a syllable
         word = word[:-1]
 
-    TwoSyllables = ["ao","uo","ia","e o","e a","u u","e ous", "uou" ,"ii"," io","u a"]
-    OneSyllable = ["ie","ai","ae","a u","a a","e e","e i","e u","i u","o a","o e","o i","u e","u i","u o","o o"]
+    TwoSyllables = ["ao","uo","ia","eo","ea","uu","eous", "uou" ,"ii"," io","ua","ya"]
+    OneSyllable = ["ie","ai","ae","au","aa","ee","ei","eu","iu","oa","oe","oi","ue","ui","uo","oo","yo","yi","ye","yu","ay"]
     LastLetter = str()
-
     # last letter is null for the first alphabet
     for index, alphabet in enumerate(word):
         if alphabet in vowels :
@@ -42,8 +43,8 @@ def syllables(word):
                     LastLetter = alphabet
 
             else :
-                if CurrentCombo in TwoSyllables :
-                    syllableCount+=1  # vowel combination forming 2 syllable
+                if CurrentCombo in TwoSyllables and CurrentCombo != word[:2] :
+                    syllableCount += 1  # vowel combination forming 2 syllable
 
                     LastLetter = alphabet
                 else :  # two vowels vowel as well as non vowel combination
