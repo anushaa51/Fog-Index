@@ -5,7 +5,7 @@ from CompoundWord import split
 
 
 try:
-    FileObject = open("TestDocument", "r")
+    FileObject = open("TestDocument.txt", "r")
 except FileNotFoundError :
     print("File does not exist, please try again by placing a valid file named 'TestDocument.txt' in current directory")
     sys.exit(0)
@@ -19,7 +19,7 @@ def counting():
 
     beg_each_Sentence = re.findall(r"\.\s*(\w+)", file_contents)
     capital_words = re.findall(r'\b[A-Z][a-z]+\b', file_contents)
-    with open("TestDocument", "r") as f:
+    with open("TestDocument.txt", "r") as f:
         words = f.read().split()
     for word in words:
         if word not in capital_words and len(word) >= 3: #all lower case words
