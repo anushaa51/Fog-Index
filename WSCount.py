@@ -4,8 +4,6 @@ from SyllableCounter import syllables
 from CompoundWord import split
 
 
-
-
 try:
     FileObject = open("TestDocument", "r")
 except FileNotFoundError :
@@ -13,6 +11,7 @@ except FileNotFoundError :
     sys.exit(0)
 
 file_contents = FileObject.read()
+
 
 def counting():
 

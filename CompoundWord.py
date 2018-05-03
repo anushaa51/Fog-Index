@@ -25,42 +25,36 @@ def __split(word, language='en_US'):
 
     dictionary = enchant.Dict(language)
     max_index = len(word)
-    for index, char in enumerate(word):
-        left_compound = word[0:max_index-index]
-        right_compound_1 = word[max_index-index:max_index]
-        right_compound_2 = word[max_index-index+1:max_index]
-        if right_compound_1:
-            right_compound1_upper = right_compound_1[0].isupper()
-        if right_compound_2:
-            right_compound2_upper = right_compound_2[0].isupper()
-        if index > 0 and len(left_compound) > 1 and not dictionary.check(left_compound):
-            left_compound = __capitalize_first_char(left_compound)
-        is_left_compound_valid_word = len(left_compound) > 1 and dictionary.check(left_compound)
-        if is_left_compound_valid_word and \
-                ((not __split(right_compound_1, language) == '' and not right_compound1_upper) or right_compound_1 == ''):
-            return [compound for compound in __concat(left_compound, __split(right_compound_1, language))\
-                    if not compound == '']
-        elif is_left_compound_valid_word and word[max_index-index:max_index-index+1] == 's' and \
-            ((not __split(right_compound_2, language) == '' and not right_compound2_upper) or right_compound_2 == ''):
-            return [compound for compound in __concat(left_compound, __split(right_compound_2, language))\
-                    if not compound == '']
-    if not word == '' and dictionary.check(word):
+
+    if max_index < 3:
         return word
-    elif not word == '' and dictionary.check(__capitalize_first_char(word)):
-        return __capitalize_first_char(word)
-    else:
-        return ''
+
+    for index, char in enumerate(word, 2):
+
+        left_word = word[0:index]
+        right_word = word[index:]
+
+        if index == max_index - 1:
+            break
+
+        if dictionary.check(left_word) and dictionary.check(right_word):
+            return [compound for compound in __concat(left_word, right_word)]
+
+    return word
 
 
-def split(compound_word,language='en_US'):
+def split(compound_word, language='en_US'):
 
     words = compound_word.split('-')
 
-    simple_words = []
+    word = ""
 
-    for word in words:
-        result = __split(word, language)
-        for val in result:
-            simple_words.append(val)
+    for x in words:
+        word += x
 
-    return simple_words
+    result = __split(word, language)
+
+    if result == compound_word:
+            return [result]
+
+    return result

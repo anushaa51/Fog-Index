@@ -1,4 +1,4 @@
-from WSCount import wordcount, sentencecount,counting
+from WSCount import wordcount, sentencecount, counting
 
 def main():
     try :
@@ -6,11 +6,14 @@ def main():
         gunning_fog_index = ((wordcount()/sentencecount()) + 100*(counting()/wordcount()))*0.4
     except ZeroDivisionError :
         fog_index_calculated = gunning_fog_index = 0
-    print("The Fog Index of the given text document is ", fog_index_calculated)
-    print("The Gunning Fog Index of the given document is ",gunning_fog_index)
-    print("Total number of sentences = ", sentencecount())
-    print("Total number of words = ",wordcount())
-    print("Total number of words with 3 or more syllables =",counting())
+    new_file = open("FogIndex.txt", "w+")
+
+    new_file.write("The Fog Index of the given text document is " + str(fog_index_calculated) + "\n")
+    new_file.write("The Gunning Fog Index of the given document is " + str(gunning_fog_index)+"\n")
+    new_file.write("Total number of sentences = " + str(sentencecount())+"\n")
+    new_file.write("Total number of words = " + str(wordcount()) + "\n")
+    new_file.write("Total number of words with 3 or more syllables =" + str(counting()) + "\n")
+    new_file.close()
 
 
 
