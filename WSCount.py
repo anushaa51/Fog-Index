@@ -1,7 +1,17 @@
 import re
+import sys
 from SyllableCounter import syllables
 from CompoundWord import split
-FileObject = open("TestDocument", "r")
+
+
+
+
+try:
+    FileObject = open("TestDocument", "r")
+except FileNotFoundError :
+    print("File does not exist, please try again by placing a valid file named 'TestDocument.txt' in current directory")
+    sys.exit(0)
+
 file_contents = FileObject.read()
 
 def counting():
@@ -34,3 +44,4 @@ def sentencecount():
 
 
 FileObject.close()
+
