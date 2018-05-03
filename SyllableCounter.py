@@ -24,7 +24,7 @@ def syllables(word):
                     syllable_count += 1  # e cannot be dropped as it contributes to a syllable
             word = word[:-1]
         except IndexError:
-            syllable_count+=0
+            syllable_count += 0
 
     one_syllable_beg = ["ya", "ae", "oe", "ea", "yo", "yu", "ye"]
     two_syllables = ["ao", "uo", "ia", "eo", "ea", "uu", "eous", "uou", "ii", "io", "ua", "ya", "yo", "yu", "ye"]

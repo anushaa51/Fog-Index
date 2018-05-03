@@ -1,5 +1,6 @@
 from WSCount import wordcount, sentencecount, counting
 
+
 def main():
     try :
         fog_index_calculated = ((wordcount()/sentencecount()) + counting())*0.4

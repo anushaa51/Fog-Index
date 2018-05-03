@@ -33,9 +33,11 @@ def counting():
                 syllablecount += 1
     return syllablecount
 
+
 def wordcount():
     # Regex to match all words, hyphenated words count as a compound words
     return len(re.findall("[a-zA-Z-]+", file_contents))
+
 
 def sentencecount():
     #regex to count sentences, can end with a period, "?" or "!"
