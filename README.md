@@ -20,7 +20,7 @@ This project is inclusive of a `syllable counter` function, and a `compound word
 
 The compound word splitter function was provided by [Gokul VSD](https://github.com/GokulVSD/FOGIndex). It uses the Python module named `PyEnchant`, which is compatible with Linux and only the 32 bit Python on Windows as of May 2018.
 <br>
-Currently, the project takes its input from a text document and gives its output to another text document.   <br><br>
+Currently, the project takes its input from a text document and gives its output to another text document. It was made as part of an assignment in Software Engineering, in semester 4 of my engineering course. <br><br>
 <h3> Sample Outputs</h3>
 Successful output :
 
