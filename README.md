@@ -12,7 +12,7 @@ Complex words : Words with 3 syllables or more, that are not compound words.<br>
 Compound words : Words that are a combination of 2 or more smaller words. For example, "multinational" is made up of the words "multi" and "national".
 <br>
 <h3>Fog Index</h3>
-<p align = "center"> <strong> Fog Index = </strong> <img align = "center" src = "https://imgur.com/a/2PWx1gn.png"></p>
+<p align = "center"> <strong> Fog Index = </strong> <img align = "center" src = "https://i.imgur.com/Nvuirz3.png"></p>
 
 <h4> Note : </h4>
 
