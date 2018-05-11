@@ -17,10 +17,11 @@ Compound words : Words that are a combination of 2 or more smaller words. For ex
 <h4> Note : </h4>
 This project is inclusive of a syllable counter function, and a compound word splitter function. They can be used independently by changing the interfaces between the functions.
 
-The compound word splitter function was provided by [Gokul VSD](https://github.com/GokulVSD/FOGIndex). It uses the Python module named PyEnchant, which is compatible with Linux and only the 32 bit Python on Windows as of May 2018.
+The compound word splitter function was provided by [Gokul VSD](https://github.com/GokulVSD/FOGIndex). It uses the Python module named `PyEnchant`, which is compatible with Linux and only the 32 bit Python on Windows as of May 2018.
 <br>
 Currently, the project takes its input from a text document and gives its output to another text document.   <br>
-Sample successful output :
+<h3> Sample Outputs</h3>
+Successful output :
 
 `The Fog Index of the given text document is 9.485714285714286`  
 `The Gunning Fog Index of the given document is 9.194805194805195`  
@@ -28,6 +29,6 @@ Sample successful output :
 `Total number of words = 110`  
 `Total number of words with 3 or more syllables = 8`
 <br><br>
-Sample unsuccessful output :
+Unsuccessful output :
 
 `File does not exist, please try again by placing a valid file named 'TestDocument.txt' in current directory`
