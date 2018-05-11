@@ -14,4 +14,5 @@ Compound words : Words that are a combination of 2 or more smaller words. For ex
 <h3>Fog Index</h3>
 <p align = "center"> <strong> Fog Index = </strong> <img align = "center" src = "https://i.imgur.com/PAu6iPm.png"></p>
 <br><br>
-<h2> Readability</h2>
+<h4> Note : </h4>
+This project is inclusive of a syllable counter function, and a compound word splitter function. They can be used independently by changing the interfaces between the functions.
