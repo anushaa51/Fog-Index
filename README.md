@@ -8,6 +8,6 @@ The Gunning fog index is a readability test commonly used to evaluate how easily
 It is calculated as follows : 
 <p align = "center">  <strong> Gunning Fog Index = </strong>  <img align = "center" src = "https://wikimedia.org/api/rest_v1/media/math/render/svg/84cd504cf61d43230ef59fbd0ecf201796e5e577" >
 </p>
-Complex words : Words with 3 syllables or more, that are not compound words.
+Complex words : Words with 3 syllables or more, that are not compound words.<br>
 Compound words : Words that are a combination of 2 or more smaller words. For example, "multinational" is made up of the words "multi" and "national".
-`check`
+
